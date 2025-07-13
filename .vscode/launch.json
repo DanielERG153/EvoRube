@@ -1,13 +1,17 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Debug EvoRube CLI",
-            "type": "python",
-            "request": "launch",
-            "program": "${workspaceFolder}/rubiks/cli.py",
-            "console": "integratedTerminal",
-            "args": ["--config", "rubiks/experiment/configs/random_walk.yaml", "--trace"]
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug EvoRube CLI",
+      "type": "python",
+      "request": "launch",
+      "python": "${workspaceFolder}/../.venv/bin/python",
+      "program": "${workspaceFolder}/rubiks/cli.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--config", "rubiks/experiment/configs/random_walk.yaml",
+        "--trace"
+      ]
+    }
+  ]
 }
