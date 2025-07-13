@@ -1,0 +1,12 @@
+agent: evolutionary
+fitness: face_colour_sqsum
+scramble: 10  # Inductive game
+budget: 20    # 20 EA runs
+trace: true
+params:
+  population_size: 500  # Larger population for exploration
+  generations: 200      # More generations for convergence
+  mutation_rate: 0.2
+  crossover_rate: 0.7
+  elitism: 0.1
+genome_len: 30

@@ -1,0 +1,5 @@
+agent: random_walk
+fitness: face_colour_sqsum
+scramble: 2  # Small scramble for quick convergence
+budget: 20   # Few steps to see progress
+trace: true

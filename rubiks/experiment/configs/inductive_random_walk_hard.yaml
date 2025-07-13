@@ -1,0 +1,5 @@
+agent: random_walk
+fitness: face_colour_sqsum
+scramble: 12  # Harder inductive game
+budget: 10000
+trace: true

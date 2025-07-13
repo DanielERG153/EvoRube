@@ -1,0 +1,5 @@
+agent: random_walk
+fitness: face_colour_sqsum
+scramble: 5  # Start with fewer moves for easier problems
+budget: 2000
+trace: true

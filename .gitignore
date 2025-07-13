@@ -1,0 +1,48 @@
+###############################################################################
+# 1. Python byte-code and caches
+###############################################################################
+__pycache__/
+*.py[cod]
+
+###############################################################################
+# 2. Build & packaging artefacts
+###############################################################################
+# Classic setuptools / distutils
+build/
+dist/
+*.egg
+*.egg-info/
+.eggs/
+develop-eggs/
+
+# Modern PEP 517 builders cache
+*.wheel
+
+###############################################################################
+# 3. Virtual-environment directories (common names)
+###############################################################################
+.venv/
+venv/
+env/
+ENV/
+# Poetry ≤1.8 uses .venv in repo; comment the next line out if you *do* commit it
+# .venv/
+
+###############################################################################
+# 4. Editor-specific clutter
+###############################################################################
+# VS Code — ignore everything, then selectively re-allow project-wide configs
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/extensions.json
+
+# JetBrains IDEs
+.idea/
+
+###############################################################################
+# 5. OS noise
+###############################################################################
+.DS_Store
+Thumbs.db
