@@ -1,0 +1,17 @@
+nohup: ignoring input
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/daniel/Code/EvoRube/rubiks/cli.py", line 18, in <module>
+    if __name__ == '__main__': main()
+                               ^^^^^^
+  File "/home/daniel/Code/EvoRube/rubiks/cli.py", line 16, in main
+    Experiment(cfg).run()
+  File "/home/daniel/Code/EvoRube/rubiks/experiment/runner.py", line 29, in run
+    done = self.agent.step(cube, self.fitness)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/daniel/Code/EvoRube/rubiks/agents/evolutionary.py", line 22, in step
+    pop = [self._random_genome() for _ in range(self.params.population_size)]
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'EvolutionaryAgent' object has no attribute '_random_genome'
+Scramble sequence: L2 D' R' B' D2 F2 B2 L' R2 U F' L U' F' L' B U2 B L' U2 B F' D' L' F R2 D2 U B2 R L F U2 L U2 R2 B2 D2 B' R2 B2 U2 F2 R2 U2 L' U2 B F R' L2 R' L F2 L' D' L U L' B' F B L B' F' R2 B2 U' F' D2 R' L2 F' D' B2 D L2 D F' L2 B2 D2 U2 B' L' F2 U2 F' D2 R B2 F2 B2 U2 L2 R' D2 F2 D' B'

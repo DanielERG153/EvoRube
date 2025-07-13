@@ -1,12 +1,12 @@
 agent: evolutionary
 fitness: face_colour_sqsum
-scramble: full  # Random start (~100 moves)
-budget: 20  # 20 EA runs
+scramble: full
+budget: 10000  # Very long, for overnight
 trace: false
 params:
-  population_size: 500
-  generations: 200
+  population_size: 1000
+  generations: 500
   mutation_rate: 0.2
   crossover_rate: 0.7
   elitism: 0.1
-genome_len: 30
+genome_len: 40

@@ -22,6 +22,7 @@ class Experiment:
                 'agent_params':json.dumps({k:self.cfg.get(k) for k in ('population_size','generations','mutation_rate','crossover_rate','elitism') if k in self.cfg}),
                 'budget':self.budget}
     def run(self):
+        start_time = time.time()
         cube=Cube(); cube.apply(random_scramble(100 if self.scramble=='full' else self.scramble))
         best=-1; bstate=None; steps=0
         while steps < self.budget:
@@ -29,9 +30,10 @@ class Experiment:
             score = self.fitness.evaluate(cube)
             if self.trace: write_trace({**self._base_row(),'step_idx':steps,'score':score,'state':cube.to_bytes()})
             if score > best:
-                best, bstate = score, cube.copy()
-                print(f"New high score at step {steps}: {score}")
-                show_net(cube)  # Print on new high
+                    best, bstate = score, cube.copy()
+                    elapsed = time.time() - start_time
+                    print(f"New high score at step {steps}: {score} (elapsed {elapsed:.2f}s)")
+                    show_net(cube)
             elif self.visual_interval > 0 and steps % self.visual_interval == 0:
                 print(f"Step {steps}, score {score}:")
                 show_net(cube)
