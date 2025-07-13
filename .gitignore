@@ -46,3 +46,9 @@ ENV/
 ###############################################################################
 .DS_Store
 Thumbs.db
+
+###############################################################################
+# 6. Data artefacts (raw & processed)
+###############################################################################
+/Data/                # ignores the top-level Data directory and everything in it
+*.parquet             # belts-and-braces rule in case someone drops a file elsewhere
