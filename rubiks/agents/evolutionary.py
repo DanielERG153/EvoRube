@@ -25,9 +25,13 @@ class EvolutionaryAgent(Agent):
         pop = [self._random_genome() for _ in range(self.params.population_size)]
         for _ in range(self.params.generations):
             scores = [self._score_genome(g, cube, fitness) for g in pop]
-            if max(scores) == 54:
+            if 54 in scores:
                 return True
             pop = self._next_generation(pop, scores)
+        # Apply best genome to main cube
+        best_genome = pop[np.argmax(scores)]
+        for mv in best_genome:
+            cube.move(mv)
         return False
 
     def _score_genome(self, genome, cube, fitness):

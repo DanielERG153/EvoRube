@@ -24,8 +24,11 @@ class Experiment:
         cube=Cube(); cube.apply(random_scramble(100 if self.scramble=='full' else self.scramble))
         best=-1; bstate=None; steps=0
         while steps < self.budget:
-            done=self.agent.step(cube,self.fitness)
-            score=self.fitness.evaluate(cube)
+            done = self.agent.step(cube, self.fitness)
+            score = self.fitness.evaluate(cube)
+            if steps % 10 == 0:  # Every 10 steps
+                print(f"Step {steps}, score {score}:")
+                show_net(cube)
             if self.trace: write_trace({**self._base_row(),'step_idx':steps,'score':score,'state':cube.to_bytes()})
             if score>best: best, bstate=score,cube.copy()
             if done: break
