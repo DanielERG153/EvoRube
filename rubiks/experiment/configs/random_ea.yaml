@@ -1,8 +1,8 @@
 agent: evolutionary
 fitness: face_colour_sqsum
 scramble: full
-budget: 10000  # Very long, for overnight
-trace: false
+budget: 10000  # Very long
+trace: true
 params:
   population_size: 1000
   generations: 500

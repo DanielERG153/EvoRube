@@ -18,21 +18,17 @@ class EvolutionaryAgent(Agent):
         self.params = params
         self.genome_len = genome_len
 
+    def _random_genome(self):
+        return [random_move() for _ in range(self.genome_len)]
+
     def step(self, cube, fitness):
         pop = [self._random_genome() for _ in range(self.params.population_size)]
         for gen in range(self.params.generations):
             scores = [self._score_genome(g, cube, fitness) for g in pop]
             if max(scores) == 486:
                 return True
-            if self.visual_interval > 0 and gen % self.visual_interval == 0:
-                best_genome = pop[np.argmax(scores)]
-                temp_cube = cube.copy()
-                for mv in best_genome:
-                    temp_cube.move(mv)
-                print(f"Generation {gen} snapshot:")
-                show_net(temp_cube)
             pop = self._next_generation(pop, scores)
-        # Apply best to cube
+        # Apply best to cube (fixes no change)
         best_genome = pop[np.argmax(scores)]
         for mv in best_genome:
             cube.move(mv)

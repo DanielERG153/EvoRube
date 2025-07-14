@@ -1,5 +1,5 @@
 agent: random_walk
 fitness: face_colour_sqsum
-scramble: 5  # Start with fewer moves for easier problems
-budget: 2000
+scramble: 1  # Sweep overrides
+budget: 100000  # Long
 trace: true
