@@ -52,3 +52,5 @@ Thumbs.db
 ###############################################################################
 /Data/                # ignores the top-level Data directory and everything in it
 *.parquet             # belts-and-braces rule in case someone drops a file elsewhere
+data/runs.parquet
+data/trace.parquet
