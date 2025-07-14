@@ -1,11 +1,11 @@
 agent: evolutionary
 fitness: face_colour_sqsum
-scramble: 2  # Moderate difficulty
-budget: 20
-trace: true
+scramble: 1
+budget: 20000  # 20k steps * 500 generations = 10M
+trace: false
 params:
   population_size: 500
-  generations: 200
+  generations: 500  # Increased
   mutation_rate: 0.2
   crossover_rate: 0.7
   elitism: 0.1
