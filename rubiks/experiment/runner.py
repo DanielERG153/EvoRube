@@ -40,3 +40,6 @@ class Experiment:
             if done: break
             steps +=1
         write_record({**self._base_row(),'steps_used':steps,'solved':cube.is_solved(),'best_score':best,'best_state':bstate.to_bytes()})
+        if self.visual_interval > 0:  # Show final if visuals enabled
+            print("Final end state:")
+            show_net(cube)
